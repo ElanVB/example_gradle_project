@@ -1,13 +1,16 @@
 apply plugin: 'java'
 
-// uncomment and add sources if external libraries are needed
-// buildscript {
-//   repositories {
-//     mavenCentral()
-//   }
-// }
+repositories {
+	mavenCentral()
+}
 
-// repositories {
-//   mavenCentral()
-//   mavenLocal()
-// }
+dependencies {
+// https://mvnrepository.com/artifact/junit/junit
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+test {
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
